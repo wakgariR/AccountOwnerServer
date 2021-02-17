@@ -10,7 +10,7 @@ namespace Entities
     {
         public RepositoryContext(DbContextOptions options) : base(options)
         {
-
+            //test
         }
         public DbSet<Owner> Owners { get; set; }
         public DbSet<Account> Accounts { get; set; }
