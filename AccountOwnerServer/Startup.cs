@@ -35,6 +35,7 @@ namespace AccountOwnerServer
             services.ConfigureIISIntegration();
             services.ConfigureLoggerService();
             services.ConfigureMySqlContext(Configuration);
+            services.ConfigureRepositoryWrapper();
 
             services.AddControllers();
         }

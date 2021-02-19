@@ -4,6 +4,7 @@ using LoggerService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +38,10 @@ namespace AccountOwnerServer.Extensions
         {
             var connectionString = config["mysqlconnection:connectionString"];
             services.AddDbContext<RepositoryContext>(o => o.UseMySql(connectionString));
+        }
+        public static void ConfigureRepositoryWrapper(this IServiceCollection services)
+        {
+            services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
         }
     }
 }
